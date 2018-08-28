@@ -32,13 +32,13 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.0.0-rc01'
-    implementation "android.arch.navigation:navigation-fragment:$nav_version"
-    implementation "android.arch.navigation:navigation-ui:$nav_version"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
 
-    implementation "androidx.constraintlayout:constraintlayout-solver:${constraint_layout}"
-    implementation "androidx.constraintlayout:constraintlayout:${constraint_layout}"
+    implementation "androidx.constraintlayout:constraintlayout-solver:$constraint_layout"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
 
-    implementation "com.google.android.material:material:${material_design}"
+    implementation "com.google.android.material:material:$material_design"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
