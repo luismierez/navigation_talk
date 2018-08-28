@@ -6,5 +6,13 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.mierez.navigation.MainFragment"
-        android:label="MainFragment" />
+        android:label="Exercise Tracker" >
+        <action
+            android:id="@+id/move_to_add_exercise"
+            app:destination="@id/addExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExerciseFragment"
+        android:name="com.mierez.navigation.AddExerciseFragment"
+        android:label="Add Exercise" />
 </navigation>
