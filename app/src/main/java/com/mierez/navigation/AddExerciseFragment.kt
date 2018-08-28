@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.mierez.navigation.model.Exercise
 import kotlinx.android.synthetic.main.add_exercise_layout.*
 
@@ -52,6 +53,7 @@ class AddExerciseFragment: Fragment() {
                     name = exerciseName, weight = exerciseWeight,
                     sets = numberOfSets, reps = numberOfReps)
 
+            findNavController().navigateUp()
         }
     }
 }
