@@ -67,7 +67,7 @@ class AddExerciseFragment: Fragment() {
 
             launch(UI) {
                 async { exerciseDatabase().exerciseDao().insert(exercise) }
-                findNavController().navigateUp()
+                findNavController().popBackStack(R.id.mainFragment, false)
             }
         }
     }
