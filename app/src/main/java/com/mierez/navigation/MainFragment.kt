@@ -16,5 +16,6 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         input_exercise.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.move_to_add_exercise))
+        view_log.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_exerciseLogFragment))
     }
 }
