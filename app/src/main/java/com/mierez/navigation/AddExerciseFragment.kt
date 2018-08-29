@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.mierez.navigation.model.Exercise
 import kotlinx.android.synthetic.main.add_exercise_layout.*
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.async
+import kotlinx.coroutines.experimental.launch
 
 class AddExerciseFragment: Fragment() {
 
@@ -53,7 +56,10 @@ class AddExerciseFragment: Fragment() {
                     name = exerciseName, weight = exerciseWeight,
                     sets = numberOfSets, reps = numberOfReps)
 
-            findNavController().navigateUp()
+            launch(UI) {
+                async { exerciseDatabase().exerciseDao().insert(exercise) }
+                findNavController().navigateUp()
+            }
         }
     }
 }

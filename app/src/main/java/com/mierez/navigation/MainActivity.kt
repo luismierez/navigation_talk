@@ -3,7 +3,7 @@ package com.mierez.navigation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import kotlinx.android.synthetic.main.navigation_acitivty_layout.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +12,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.navigation_acitivty_layout)
-
         setSupportActionBar(toolbar)
 
-        NavigationUI.setupActionBarWithNavController(this, findNavController(R.id.nav_host_fragment))
+        // From -ktx
+        setupActionBarWithNavController(findNavController(R.id.nav_host_fragment))
 
+        // Otherwise need to call
+        // NavigationUI.setupActionBarWithNavController(this,
+        //         Navigation.findNavController(this, R.id.nav_host_fragment))
     }
 
     override fun onSupportNavigateUp(): Boolean {
