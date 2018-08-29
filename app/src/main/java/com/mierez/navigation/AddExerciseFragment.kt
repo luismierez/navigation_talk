@@ -21,6 +21,15 @@ class AddExerciseFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val exercise = AddExerciseFragmentArgs.fromBundle(arguments).exercise
+
+        if (exercise != null) {
+            name_field.setText(exercise.name)
+            weight_field.setText(exercise.weight.toString())
+            sets_field.setText(exercise.sets.toString())
+            repetitions_field.setText(exercise.reps.toString())
+        }
+
         add_exercise.setOnClickListener {
             val exerciseName = name_field.sanitizedText
             val exerciseWeight = weight_field.sanitizedFloat

@@ -28,6 +28,7 @@ class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(con
         exercise_name.text = exercise.name
         weight.text = "${exercise.weight} lbs"
         reps_sets.text = "${exercise.reps} X ${exercise.sets}"
+        setOnClickListener { clickListener(exercise) }
     }
 }
 

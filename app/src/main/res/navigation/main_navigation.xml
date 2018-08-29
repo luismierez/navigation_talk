@@ -27,9 +27,19 @@
     <fragment
         android:id="@+id/addExerciseFragment"
         android:name="com.mierez.navigation.AddExerciseFragment"
-        android:label="Add Exercise" />
+        android:label="Add Exercise" >
+        <argument
+            android:name="exercise"
+            android:defaultValue="@null"
+            app:argType="com.mierez.navigation.model.Exercise"
+            app:nullable="true" />
+    </fragment>
     <fragment
         android:id="@+id/exerciseLogFragment"
         android:name="com.mierez.navigation.ExerciseLogFragment"
-        android:label="ExerciseLogFragment" />
+        android:label="ExerciseLogFragment" >
+        <action
+            android:id="@+id/action_exerciseLogFragment_to_addExerciseFragment"
+            app:destination="@id/addExerciseFragment" />
+    </fragment>
 </navigation>

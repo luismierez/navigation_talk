@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.exercise_log_layout.*
@@ -20,8 +21,11 @@ class ExerciseLogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = ExerciseAdapter {
-
+            val action = ExerciseLogFragmentDirections.actionExerciseLogFragmentToAddExerciseFragment()
+            action.setExercise(it)
+            findNavController().navigate(action)
         }
+
         exercise_list.layoutManager = LinearLayoutManager(context)
         exercise_list.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         exercise_list.adapter = adapter
