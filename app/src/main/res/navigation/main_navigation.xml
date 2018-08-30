@@ -23,6 +23,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+            android:id="@+id/action_mainFragment_to_enterInfoFragment"
+            app:destination="@id/enterInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/addExerciseFragment"
@@ -33,6 +36,9 @@
             android:defaultValue="@null"
             app:argType="com.mierez.navigation.model.Exercise"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_addExerciseFragment_to_enterInfoFragment"
+            app:destination="@id/enterInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseLogFragment"
@@ -40,6 +46,14 @@
         android:label="ExerciseLogFragment" >
         <action
             android:id="@+id/action_exerciseLogFragment_to_addExerciseFragment"
+            app:destination="@id/addExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterInfoFragment"
+        android:name="com.mierez.navigation.EnterInfoFragment"
+        android:label="EnterInfoFragment" >
+        <action
+            android:id="@+id/action_enterInfoFragment_to_addExerciseFragment"
             app:destination="@id/addExerciseFragment" />
     </fragment>
 </navigation>
